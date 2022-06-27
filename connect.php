@@ -2,8 +2,9 @@
 	$firstName = $_POST['firstName'];
 	$lastName = $_POST['lastName'];
 	$idNo = $_POST['idNo'];
-	$dateofbirth = $_POST['dateofbirth'];
-	//$dateofbirth = date('d/m/Y', strtotime($_POST['dateofbirth']));
+	$dateofbirth = (date_format(date_create($_POST['dateofbirth']),"d/m/Y"));
+
+
 	$conn = new mysqli('localhost','root','','devproxdb');
 
     // Database connection
@@ -13,8 +14,7 @@
 	//dbname : devproxdb
 	//tablename : staff_data 
 
-	
-	//Validating input data for Name and Surname
+	/** Validating input data for Name and Surname*/
 	if($firstName != ctype_alpha($firstName) || $lastName != ctype_alpha($lastName)){
 
 		echo " Invalid Name or Surname ";
