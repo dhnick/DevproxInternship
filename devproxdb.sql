@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jun 22, 2022 at 01:11 AM
+-- Generation Time: Jun 27, 2022 at 12:58 AM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -33,9 +33,18 @@ CREATE TABLE IF NOT EXISTS `staff_data` (
   `firstName` varchar(50) NOT NULL,
   `lastName` varchar(50) NOT NULL,
   `idNo` varchar(13) NOT NULL,
-  `dateofbirth` date NOT NULL,
+  `dateofbirth` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `staff_data`
+--
+
+INSERT INTO `staff_data` (`id`, `firstName`, `lastName`, `idNo`, `dateofbirth`) VALUES
+(1, 'Kevin', 'September', '0006025245082', '02/06/2000'),
+(2, 'Amy', 'DeWett', '0105095245082', '09/05/2001'),
+(3, 'Peter', 'Parker', '9902035245082', '03/02/1999');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
